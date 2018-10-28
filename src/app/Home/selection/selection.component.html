@@ -1,0 +1,22 @@
+<section class="select">
+  <div class="container">
+    <p class="section-subtitle">Выберите свой торт</p>
+    <h2>Торты на заказ с доставкой <br>в Минске</h2>
+    <div class="row">
+      <div class="col-12 col-sm-6 col-md-5">
+        <p class="section-description">В кондитерской Добрый пекарь вы можете выбрать торт из каталога на сайте или заказать торт по своему эскизу (фото или рисунок) для любого праздника</p>
+      </div>
+    </div>
+    <ul class="row cards">
+      <li *ngFor="let card of cardItems"
+          class="card"
+          [ngStyle]="{ 'background-color': card.color }">
+        <div class="card-content">
+          <div class="card-image"></div>
+          <p>{{ card.title }}</p>
+          <a href="javascript:void(0)">Смотреть торты</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>

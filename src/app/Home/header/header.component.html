@@ -1,0 +1,58 @@
+<header>
+  <div class="header-top">
+    <div class="container">
+      <div class="row">
+        <div class="col-10">
+          <app-menu></app-menu>
+        </div>
+        <div class="col-2 text-right">
+          <a [href]="'tel:' + phone" class="nav-link phone">{{ phone | msisdn }}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="header-bottom">
+    <div class="container">
+      <div class="row">
+
+        <!-- Menu button -->
+        <div class="col-1 menu-button" (click)="isMenuOpen = !isMenuOpen">
+          <div class="hamburger hamburger--vortex"
+               [class.is-active]="isMenuOpen">
+            <div class="hamburger-box">
+              <div class="hamburger-inner"></div>
+            </div>
+          </div>
+          <span>Меню</span>
+        </div>
+
+        <!-- Header hint -->
+        <div class="col-8 header-hint">
+          <div class="hint-wrapper">
+            <span>Начните поиск с 3993 тортов!</span>
+            <span class="hint-examples">Например:</span>
+            <a class="card-link" href="#">свадьба</a>
+            <a class="card-link" href="#">день рождения</a>
+            <a class="card-link" href="#">юбилей</a>
+          </div>
+        </div>
+
+        <!-- Basket summary -->
+        <div class="col-3 text-right header-basket">
+          <div class="basket-amount">
+            <p>{{ amount| copeckaPipe }}</p>
+            <a href="javascript:void(0)" class="card-link">{{ basket.length }} товаров</a>
+          </div>
+          <button class="btn" (click)="modal.open('basket-modal')">Корзина</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Basket Modal -->
+<ngx-smart-modal identifier="basket-modal">
+  <h1>Корзинка</h1>
+  <p>Ах, моя корзиночка!</p>
+  <button (click)="modal.close('basket-modal')" class="btn">Close</button>
+</ngx-smart-modal>

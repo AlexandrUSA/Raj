@@ -1,0 +1,59 @@
+@import "~src/assets/styles/utils";
+
+.cards {
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+  @include media-breakpoint-up(lg) {
+    justify-content: space-between;
+  }
+}
+
+.card {
+  width: calc(100% - 15px);
+  height: 279px;
+  margin: 0 7px 15px;
+  padding: 110px 12px 12px;
+  border: 1px solid #E5E5E5;
+  border-radius: 5px;
+  font-family: $secondary-font;
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform .25s;
+  @include media-breakpoint-up(sm) {
+    width: calc(50% - 15px);
+  }
+  @include media-breakpoint-up(md) {
+    width: calc(33.33% - 15px);
+  }
+  @include media-breakpoint-up(lg) {
+    width: calc(20% - 15px);
+    margin: 0;
+  }
+  &:hover {
+    padding-top: 100px;
+    transform: translateY(-15px);
+    .card-content {
+      transform: translateY(0px);
+    }
+  }
+  &-content {
+    transform: translateY(10px);
+    transition: transform .25s;
+  }
+  &-image {
+    width: 89px;
+    height: 89px;
+    margin-bottom: 25px;
+    background-color: #fff;
+    border-radius: 50%;
+  }
+  p {
+    margin-bottom: 10px;
+  }
+  a {
+    //display: none;
+    color: #4E4E4E;
+    font-size: 12px;
+  }
+}

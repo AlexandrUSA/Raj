@@ -1,0 +1,58 @@
+@import "~src/assets/styles/utils";
+
+footer {
+  margin-top: 100px;
+  padding: 20px 0 0;
+  border-top: 1px solid #C2D1D9;
+  border-bottom: 1px solid #C2D1D9;
+}
+
+h3 {
+  color: #505D68;
+  font-size: 20px;
+  line-height: 29px;
+}
+.categories-list {
+  column-count: 2;
+  column-gap: 0;
+  position: relative;
+}
+li a,
+label {
+  color: #A1AEB7;
+  font-size: 14px;
+  line-height: 21px;
+}
+
+label {
+  margin: 0;
+  padding: 0;
+}
+
+.input-content {
+  display: flex;
+  margin-top: 15px;
+  .form-control {
+    flex: 1 1 70%;
+  }
+  .btn {
+    flex: 1 1 30%;
+    font-size: 12px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+}
+
+.email-form {
+  margin-top: 25px;
+  @include media-breakpoint-up(lg) {
+    margin-top: 0;
+  }
+}
+
+.footer-bottom {
+  border-top: 1px solid #C2D1D9;
+  .copyrights {
+    padding-top: 8px;
+  }
+}

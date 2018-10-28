@@ -1,0 +1,28 @@
+<section class="reviewers">
+  <div class="container">
+    <p class="section-subtitle">Отзывы</p>
+    <h2>Здесь вы можете ознакомиться <br> с тем, что говорят о нашем <br> магазине</h2>
+    <ul class="row">
+      <li *ngFor="let reviewer of reviewers"
+          class="col-12 col-md-6">
+        <div class="card-image">
+            <img [src]="getAvatar(reviewer.avatar)"
+            [alt]="reviewer.name"
+            (error)="imgErrorHandler($event)">
+        </div>
+        <div class="card-content">
+          <div class="card-title">
+            <p>{{ reviewer.name }}
+              <a *ngFor="let social of reviewer.social" class="link-purple"  [href]="social.link">{{ social.type }}</a>
+            </p>
+            <p class="msisdn">{{ reviewer.msisdn | msisdn }}</p>
+          </div>
+          <div class="card-description">
+              {{ reviewer.review }}
+          </div>
+          <button class="btn btn-purple">Читать полностью</button>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>

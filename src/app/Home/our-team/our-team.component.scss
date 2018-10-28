@@ -1,0 +1,36 @@
+ul {
+  margin-top: 95px;
+}
+
+li {
+  display: flex;
+  margin-bottom: 55px;
+}
+
+.card {
+  &-title {
+    font-size: 20px;
+    .msisdn {
+      font-size: 16px;
+      color: #777777;
+    }
+  }
+  &-image {
+    flex: 0 1 120px;
+    min-width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: #000;
+    overflow: hidden;
+  }
+  &-content {
+    flex: 1 0 inherit;
+    padding: 0 20px;
+  }
+}
+
+.position {
+  margin-top: 10px;
+  color: #A1AEB7;
+  font-size: 14px;
+}

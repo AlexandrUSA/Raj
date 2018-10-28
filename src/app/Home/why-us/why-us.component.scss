@@ -1,0 +1,21 @@
+li {
+  display: flex;
+  margin-bottom: 40px;
+}
+
+.card {
+  &-image {
+    flex: 0 1 70px;
+    min-width: 70px;
+    height: 72px;
+    background-color: #000;
+    opacity: 0.4;
+  }
+  &-title {
+    font-size: 20px;
+  }
+  &-content {
+    flex: 1 0 inherit;
+    padding: 0 20px;
+  }
+}

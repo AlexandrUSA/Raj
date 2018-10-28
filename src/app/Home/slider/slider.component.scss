@@ -1,0 +1,63 @@
+.slider {
+  width: 100%;
+  min-height: 530px;
+  padding: 150px 0 30px;
+  background-image: linear-gradient(120deg, #89f7fe 0%, #66a6ff 100%);
+}
+
+h1 {
+  margin-bottom: 30px;
+  font-size: 42px;
+}
+
+.btn {
+  padding: 10px 35px;
+}
+
+.slider-controls {
+  display: flex;
+  margin: 100px 0 0;
+  padding: 0;
+  list-style-type: none;
+  .control-title {
+    margin-bottom: 5px;
+    font-size: 14px;
+  }
+  li {
+    flex: 0 1 257px;
+    margin-right: 45px;
+    color: #777777;
+    font-size: 12px;
+    cursor: pointer;
+  }
+  p {
+    margin: 0;
+  }
+}
+
+.control-line {
+  position: relative;
+  margin-bottom: 8px;
+  height: 2px;
+  background-color: #777777;
+  &::before {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 100%;
+    content: "";
+    display: inline-block;
+    background-color: #000000;
+    transition: all .25s;
+  }
+}
+
+.control-selected {
+  .control-line::before {
+    right: 50%;
+  }
+  .control-title {
+    color: #000;
+  }
+}

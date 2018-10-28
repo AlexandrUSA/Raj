@@ -1,0 +1,21 @@
+@import 'src/assets/styles/vars.scss';
+
+.nav {
+  &-link {
+    padding: 0;
+    color: $main-color;
+    text-transform: uppercase;
+    font-size: 12px;
+    line-height: 16px;
+    transition: color .25s;
+    &:hover {
+      color: $purple;
+    }
+  }
+  li {
+    padding: .8rem 1rem;
+    &:first-child {
+      padding-left: 0;
+    }
+  }
+}

@@ -1,0 +1,19 @@
+<div class="slider">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-7">
+          <h1>Коробка капкейков в подарок к первому заказу</h1>
+          <button class="btn btn-purple">Подробности</button>
+      </div>
+    </div>
+    <ul class="slider-controls">
+      <li *ngFor="let control of slideControls; let i = index"
+          [class.control-selected]="i === selectedControl"
+          (click)="selectedControl = i">
+        <div class="control-line"></div>
+        <p class="control-title">{{ control.title }}</p>
+        <p>{{ control.description }}</p>
+      </li>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+<section class="our-team">
+    <div class="container">
+      <p class="section-subtitle">Команда</p>
+      <h2>С нами работают только лучшие <br> специалисты в своем деле которые <br> сделают ваш торт особенным</h2>
+      <ul class="row">
+        <li *ngFor="let employee of employees"
+            class="col-12 col-md-6 col-lg-4 justify-content-center justify-content-md-start">
+          <div class="card-image">
+            <img [src]="getAvatar(employee.avatar)"
+                 [alt]="employee.name"
+                 (error)="imgErrorHandler($event)">
+          </div>
+          <div class="card-content">
+            <div class="card-title">
+              <p>{{ employee.name }}</p>
+              <p class="position">{{ employee.position }}</p>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>

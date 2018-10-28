@@ -1,0 +1,19 @@
+<section class="documents">
+    <div class="container">
+      <p class="section-subtitle">Документы</p>
+      <h2>Изучите наши сертификаты <br> качества и документы</h2>
+      <ul class="row">
+        <li *ngFor="let document of documents"
+            class="col-12 col-md-6 col-lg-3">
+            <div class="image">
+                <img [src]="imagesPath + document.imageSrc" [alt]="document.title">
+                <div class="image-hover">
+                  <img src="/assets/images/eye.png" alt="eye">
+                  <a [href]="imagesPath + document.imageSrc" target="_blank">Смотреть документ</a>
+                </div>
+            </div>
+          <p class="document-title">{{ document.title }}</p>
+        </li>
+      </ul>
+    </div>
+  </section>
