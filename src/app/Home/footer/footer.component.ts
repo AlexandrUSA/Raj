@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Social} from '../models';
+import {Social} from '../home.model';
 import {FormGroup, FormControl, FormBuilder, Validators} from '@angular/forms';
 
 @Component({

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Card } from '../models';
+import { Card } from '../home.model';
+import { HomeService } from './../home.service';
 
 @Component({
   selector: 'app-documents',
@@ -10,27 +11,12 @@ export class DocumentsComponent implements OnInit {
 
   protected readonly imagesPath = `/assets/images/documents/`;
 
-  documents: Card[] = [
-    {
-      title: `Сертификат продукции собственного производства`,
-      imageSrc: `certificate.jpg`
-    },
-    {
-      title: `Сертификат продукции собственного производства`,
-      imageSrc: `certificate.jpg`
-    },
-    {
-      title: `Сертификат продукции собственного производства`,
-      imageSrc: `certificate.jpg`
-    },
-    {
-      title: `Сертификат продукции собственного производства`,
-      imageSrc: `certificate.jpg`
-    }
-  ];
+  documents: Card[] = [];
 
-  constructor() { }
+  constructor(private homeService: HomeService) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.documents = this.homeService.getDocuments();
+  }
 
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Card } from '../models';
+import { Card } from '../home.model';
+import {HomeService} from '../home.service';
 
 @Component({
   selector: 'app-selection',
@@ -8,31 +9,12 @@ import { Card } from '../models';
 })
 export class SelectionComponent implements OnInit {
 
-  cardItems: Card[] = [
-    {
-      title: 'Детские торты',
-      color: '#D8E9FA'
-    },
-    {
-      title: 'Свадебные торты',
-      color: '#DBD8FA'
-    },
-    {
-      title: 'Праздничные торты',
-      color: '#D8FAF1'
-    },
-    {
-      title: 'На день рождения',
-      color: '#EFFAD8'
-    },
-    {
-      title: 'Candy bar и пироженные',
-      color: '#FAD8DE'
-    },
-  ];
+  cardItems: Card[] = [];
 
-  constructor() { }
+  constructor( private homeService: HomeService ) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.cardItems = this.homeService.getCategories();
+  }
 
 }

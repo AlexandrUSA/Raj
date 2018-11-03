@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CakeCard } from '../models';
+import { CakeCard } from '../home.model';
+import {HomeService} from '../home.service';
 
 @Component({
   selector: 'app-top-sales',
@@ -11,32 +12,12 @@ export class TopSalesComponent implements OnInit {
   protected readonly imagesPath = `/assets/images/`;
   protected readonly defaultImage = `no-image.png`;
 
-  cards: CakeCard[] = [
-    {
-      title: 'Торт корабль',
-      price: 500,
-      minWeight: 2
-    },
-    {
-      title: 'Торт корабль',
-      price: 900,
-      minWeight: 3
-    },
-    {
-      title: 'Торт корабль',
-      price: 1200,
-      minWeight: 1
-    },
-    {
-      title: 'Торт корабль',
-      price: 70,
-      minWeight: 1
-    },
-  ];
+  cards: CakeCard[] = [];
 
-  constructor() { }
+  constructor( private homeService: HomeService ) { }
 
   ngOnInit() {
+    this.cards = this.homeService.getTopSales();
   }
 
   getImage(imageSrc: string) {

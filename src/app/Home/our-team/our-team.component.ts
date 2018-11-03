@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Employee } from '../models';
+import { Employee } from '../home.model';
+import {HomeService} from '../home.service';
 
 @Component({
   selector: 'app-our-team',
@@ -11,57 +12,13 @@ export class OurTeamComponent implements OnInit {
   protected readonly imagesPath = `/assets/images/avatars/`;
   protected readonly defaultAvatar = `no-avatar.png`;
 
-  employees: Employee[] = [
-    {
-      avatar: null,
-      name: `Мария Шарапова`,
-      position: `Главный кондитер`
-    },
-    {
-      avatar: `картинка, которой нетути((`,
-      name: `Мария Шарапова`,
-      position: `Главный кондитер`
-    },
-    {
-      avatar: 'null',
-      name: `Мария Шарапова`,
-      position: `Главный кондитер`
-    },
-    {
-      avatar: null,
-      name: `Евгений Смирнов`,
-      position: `Главный кондитер`
-    },
-    {
-      avatar: null,
-      name: `Евгений Смирнов`,
-      position: `Главный кондитер`
-    },
-    {
-      avatar: null,
-      name: `Евгений Смирнов`,
-      position: `Главный кондитер`
-    },
-    {
-      avatar: null,
-      name: `Евгений Смирнов`,
-      position: `Главный кондитер`
-    },
-    {
-      avatar: null,
-      name: `Евгений Смирнов`,
-      position: `Главный кондитер`
-    },
-    {
-      avatar: null,
-      name: `Евгений Смирнов`,
-      position: `Главный кондитер`
-    },
-  ];
+  employees: Employee[] = [];
 
-  constructor() { }
+  constructor( private homeService: HomeService ) { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.employees = this.homeService.getEmployees();
+  }
 
   imgErrorHandler (event): void {
     event.srcElement.src = this.getAvatar();
