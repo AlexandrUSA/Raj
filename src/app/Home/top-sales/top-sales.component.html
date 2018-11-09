@@ -1,16 +1,8 @@
 <section class="top-sales">
   <div class="container">
-      <p class="section-subtitle">Хиты продаж</p>
-      <h2>Торты на заказ с доставкой <br>в Минске</h2>
-      <ul class="row">
-        <li *ngFor="let card of cards" class="col-12 col-md-6 col-lg-3">
-          <div class="card" [ngStyle]="{ 'background-image': getImage(card.imageSrc) }">
-              <p class="card-title">{{ card.title }}</p>
-              <p class="card-additional">от {{ card.price }} рублей за 1 кг</p>
-              <p class="card-additional">Мин. вес торта - {{ card.minWeight }} кг</p>
-          </div>
-        </li>
-      </ul>
-      <button class="btn btn-purple">Смотреть все</button>
+    <p class="section-subtitle">Хиты продаж</p>
+    <h2>Торты на заказ с доставкой <br>в Минске</h2>
+    <app-cake-list [cards]="cards"></app-cake-list>
+    <button class="btn btn-purple">Смотреть все</button>
   </div>
 </section>

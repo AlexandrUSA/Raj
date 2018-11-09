@@ -1,6 +1,6 @@
-import {AfterViewInit, Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgxSmartModalService } from 'ngx-smart-modal';
-import {Basket} from '../home.model';
+import { Basket } from '@Shared/shared.models';
 
 @Component({
   selector: 'app-header',

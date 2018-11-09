@@ -1,0 +1,29 @@
+@import "~src/assets/styles/utils";
+
+.cake-details {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+  .cake-carousel,
+  .cake-controls {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .cake-details {
+    .cake-carousel,
+    .cake-controls {
+      margin-bottom: 0;
+    }
+
+    .cake-carousel {
+      width: 52%;
+    }
+    .cake-controls {
+      width: 48%;
+      padding-left: 45px;
+    }
+  }
+}

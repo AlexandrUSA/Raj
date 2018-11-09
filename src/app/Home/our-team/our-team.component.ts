@@ -1,31 +1,29 @@
 import { Component, OnInit } from '@angular/core';
 import { Employee } from '../home.model';
-import {HomeService} from '../home.service';
+import { ApiService } from '@app/core/api.service';
 
 @Component({
   selector: 'app-our-team',
   templateUrl: './our-team.component.html',
-  styleUrls: ['./our-team.component.scss']
+  styleUrls: ['./our-team.component.scss'],
 })
 export class OurTeamComponent implements OnInit {
-
   protected readonly imagesPath = `/assets/images/avatars/`;
   protected readonly defaultAvatar = `no-avatar.png`;
 
   employees: Employee[] = [];
 
-  constructor( private homeService: HomeService ) { }
+  constructor(private api: ApiService) {}
 
   ngOnInit() {
-    this.employees = this.homeService.getEmployees();
+    this.employees = this.api.getEmployees();
   }
 
-  imgErrorHandler (event): void {
+  imgErrorHandler(event): void {
     event.srcElement.src = this.getAvatar();
   }
 
-  getAvatar (name?: string): string {
+  getAvatar(name?: string): string {
     return name ? this.imagesPath + name : this.imagesPath + this.defaultAvatar;
   }
-
 }

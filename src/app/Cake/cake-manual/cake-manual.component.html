@@ -1,0 +1,19 @@
+<div class="card">
+  <div class="card-body">
+    <h4 class="card-title">Как определить вес и ярусность? <a href="/">Как формируется цена?</a></h4>
+    <p class="card-subtitle">Вес торта формируется исходя из порции 200 гр на человека (минимальный вес торта 2 кг) </p>
+    <div class="card-content">
+      <ul>
+        <li *ngFor="let tier of cakeTiers">
+          <div class="drop"></div>
+          <p>Ярус: {{ tier.level }}</p>
+          <p>Гости: до {{ tier.persons }} человек</p>
+          <p>Вес: {{ tier.weight.min + '-' + tier.weight.max }} кг</p>
+        </li>
+      </ul>
+      <p>Для точного расчета стоимости заказа, обратитесь к менеджеру по телефону:
+        <a [href]="'tel:' + phone">{{ phone | msisdn: '-' }}</a>
+      </p>
+    </div>
+  </div>
+</div>
