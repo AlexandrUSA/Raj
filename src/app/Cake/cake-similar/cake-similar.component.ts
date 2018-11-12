@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '@app/core/api.service';
-import { Card } from '@Shared/shared.models';
+import { Card } from '@Shared/shared.model';
 
 @Component({
   selector: 'app-cake-similar',

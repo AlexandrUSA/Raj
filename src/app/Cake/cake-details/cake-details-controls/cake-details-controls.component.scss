@@ -1,4 +1,4 @@
-@import '~src/assets/styles/vars.scss';
+@import '~src/assets/styles/utils';
 
 .badge {
   padding: 5px 15px;
@@ -15,7 +15,7 @@ h3 {
 .amount-old {
   position: relative;
   display: inline-block;
-  color: #9F9F9F;
+  color: $gray;
   font-size: 18px;
   &::after {
     content: "";
@@ -24,11 +24,11 @@ h3 {
     left: 0;
     width: 100%;
     height: 2px;
-    background-color: #9F9F9F;
+    background-color: $gray;
   }
 }
 .amount-current {
-  color: #505D68;
+  color: $dark-gray;
   font-size: 42px;
   line-height: 42px;
   span {
@@ -66,7 +66,7 @@ footer {
     height: 56px;
     width: 30px;
     line-height: 56px;
-    color: #505D68;
+    color: $dark-gray;
     font-size: 24px;
     text-align: center;
     &:hover {

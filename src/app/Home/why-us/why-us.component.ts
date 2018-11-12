@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DescriptionCard } from '@Shared/shared.models';
+import { DescriptionCard } from '@Shared/shared.model';
 import { ApiService } from '@app/core/api.service';
 
 @Component({

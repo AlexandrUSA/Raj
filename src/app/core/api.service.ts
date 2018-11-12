@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Employee, Reviewer } from '../Home/home.model';
-import { CakeCard, Card, DescriptionCard } from '../shared/shared.models';
+import { CakeCard, Card, DescriptionCard } from '../shared/shared.model';
 
 @Injectable({
   providedIn: 'root',

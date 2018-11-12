@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CakeCard } from '@Shared/shared.models';
+import { CakeCard } from '@Shared/shared.model';
 import { ApiService } from '@app/core/api.service';
 
 @Component({
